@@ -1,0 +1,48 @@
+GET http://localhost:3001/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1NjI2ODcsImV4cCI6MTY3NDU2MjcwN30._OpPKEL9QbvmB0Q25--iWe4stFCW7sRmKbHrX5TRp6M
+
+###
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+    "username" : "test",
+    "email" : "test@gmail.com",
+    "password" : "test123",
+    "confirmPassword" : "test123"
+} 
+###
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "username" : "test",
+    "password" : "test123"
+} 
+
+###
+GET http://localhost:3001/token
+
+###
+DELETE http://localhost:3001/logout
+
+###
+GET http://localhost:3001/view
+
+###
+GET http://localhost:3001/view/
+
+###
+GET http://localhost:3001/view/spes
+
+###
+POST http://localhost:3001/accepted/1
+
+###
+POST http://localhost:3001/dikirim/10
+
+###
+GET http://localhost:3001/terkirim
+
+###
+GET http://localhost:3001/profile
