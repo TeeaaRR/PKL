@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
   <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
     <div className="container flex flex-wrap items-center justify-between mx-auto">
-      <a href="../home" className="flex items-center">
+      <a href="../homeAdmin" className="flex items-center">
         {/* <img src="../public/image.png" className="h-6 mr-3 sm:h-9"/> */}
         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SI DAFA</span>
       </a>

@@ -94,6 +94,15 @@ const Input = () => {
     const handlerUpload = (e) => {
         const file = e.target.files[0];
 
+        if (!file) return;
+
+        // Only allow PDF files
+        if (file.type !== 'application/pdf') {
+            alert('Only PDF files are allowed.');
+            e.target.value = ''; // reset input
+            return;
+        }
+
         const now = new Date();
         const waktu = now.toTimeString().split(' ')[0].replace(/:/g, '');
 
@@ -102,11 +111,13 @@ const Input = () => {
         const newName = kode_klasifikasi + "_" + tanggal + "_" + waktu + ext;
 
         const renamed = new File([file], newName, { type: file.type });
+
         setFileData(renamed);
         setFileName(newName);
 
         const reader = new FileReader();
         reader.readAsDataURL(renamed);
+        
         reader.onload = (e) => {
             const base64 = e.target.result;
             setFileBase64(base64);
@@ -279,7 +290,7 @@ const Input = () => {
                             name="upload"
                             className="m-2 block text-sm border hover:file:border-cyan-500 hover:file:bg-cyan-500 border-cyan-500 rounded-lg file:border-0 file:bg-cyan-500 cursor-pointer" 
                             onChange={handlerUpload}
-                            accept=".pdf"
+                            accept=".pdf,application/pdf"
                             required
                         />
                         </th>
